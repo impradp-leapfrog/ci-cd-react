@@ -1,0 +1,25 @@
+version: 2
+general:
+  branches:
+    only:
+      - master
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run:
+          name: Deploy
+          command: |
+            ssh -o StrictHostKeyChecking=no ubuntu@54.209.81.26 \
+            "echo Start deploy && \
+            cd ~/ci-cd-react && \
+            git pull origin master && \s
+            sudo docker compose up --build -d && \
+            echo Deploy end"
+workflows:
+  version: 2
+  deploy_ec2:
+    jobs:
+      - build
