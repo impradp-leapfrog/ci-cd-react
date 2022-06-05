@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-           Last changes
+           Welcome to the intial changes for the ci-cd pipeline.
         </p>
         <a
           className="App-link"
