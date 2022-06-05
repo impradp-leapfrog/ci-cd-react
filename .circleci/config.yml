@@ -16,7 +16,7 @@ jobs:
             "echo Start deploy && \
             cd ~/ci-cd-react && \
             git pull origin master && \s
-            sudo docker compose up --build -d && \
+            sudo docker-compose up --build -d && \
             echo Deploy end"
 workflows:
   version: 2
